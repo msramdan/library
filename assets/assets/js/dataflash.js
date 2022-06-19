@@ -12,7 +12,7 @@ if(flasData){
 
 if(flasDataError){
 	Swal.fire(
-	  'Error 404',
+	  'Acces denied',
 	  flasDataError,
 	  'error'
 	)

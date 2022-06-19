@@ -34,7 +34,7 @@
                                             <th>Tahun Terbit</th>
                                             <th>File Pdf</th>
                                             <th>Kategori Modul</th>
-                                            <th>View</th>
+                                            <th>Total View</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -47,7 +47,9 @@
                                                 <td><?php echo $modul_pdf->deskripsi ?></td>
                                                 <td><?php echo $modul_pdf->author ?></td>
                                                 <td><?php echo $modul_pdf->tahun_terbit ?></td>
-                                                <td><?php echo $modul_pdf->file_pdf ?></td>
+                                                <td>
+                                                    <a href="<?php echo base_url() . 'assets/template/assets/pdf/' . $modul_pdf->file_pdf ?>"><i class="ace-icon fa fa-download"></i>
+                                                </td>
                                                 <td><?php echo $modul_pdf->nama_kategori_modul ?></td>
                                                 <td><?php echo $modul_pdf->view ?></td>
                                                 <td>

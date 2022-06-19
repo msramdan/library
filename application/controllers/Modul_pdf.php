@@ -129,15 +129,34 @@ class Modul_pdf extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->update($this->input->post('modul_pdf_id', TRUE));
         } else {
+            $config['upload_path']      = './assets/template/assets/pdf';
+			$config['allowed_types']    = 'pdf';
+			$config['max_size']         = 10048;
+			$config['file_name']        = 'File-' . date('ymd') . '-' . substr(sha1(rand()), 0, 10);
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+			if ($this->upload->do_upload("file_pdf")) {
+				$id = $this->input->post('modul_pdf_id');
+				$row = $this->Modul_pdf_model->get_by_id($id);
+				$data = $this->upload->data();
+				$file_pdf = $data['file_name'];
+				if ($row->file_pdf == null || $row->file_pdf == '') {
+				} else {
+					$target_file = './assets/template/assets/pdf/' . $row->file_pdf;
+					unlink($target_file);
+				}
+			} else {
+				$file_pdf = $this->input->post('file_pdf_lama');
+			}
+
+
             $data = array(
                 'title' => $this->input->post('title', TRUE),
                 'deskripsi' => $this->input->post('deskripsi', TRUE),
-                'tanggal' => $this->input->post('tanggal', TRUE),
                 'author' => $this->input->post('author', TRUE),
                 'tahun_terbit' => $this->input->post('tahun_terbit', TRUE),
-                'file_pdf' => $this->input->post('file_pdf', TRUE),
+                'file_pdf' => $file_pdf,
                 'kategori_modul_id' => $this->input->post('kategori_modul_id', TRUE),
-                'view' => $this->input->post('view', TRUE),
             );
 
             $this->Modul_pdf_model->update($this->input->post('modul_pdf_id', TRUE), $data);

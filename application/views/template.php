@@ -86,27 +86,6 @@
 							<div class="menu-text">Dashboard</div>
 						</a>
 					</div>
-					<div class="menu-item has-sub <?= $this->uri->segment(1) == 'kategori_video' || $this->uri->segment(1) == 'video' ? 'active' : '' ?>">
-						<a href="javascript:;" class="menu-link">
-							<div class="menu-icon">
-								<i class="fa fa-video"></i>
-							</div>
-							<div class="menu-text">Video Pembelajaran</div>
-							<div class="menu-caret"></div>
-						</a>
-						<div class="menu-submenu">
-							<div class="menu-item <?= $this->uri->segment(1) == 'video' ? 'active' : '' ?>">
-								<a href="<?= base_url() ?>video" class="menu-link">
-									<div class="menu-text">Data Video</div>
-								</a>
-							</div>
-							<div class="menu-item  <?= $this->uri->segment(1) == 'kategori_video' ? 'active' : '' ?>">
-								<a href="<?= base_url() ?>kategori_video" class="menu-link">
-									<div class="menu-text">Data Kategori Video</div>
-								</a>
-							</div>
-						</div>
-					</div>
 					<div class="menu-item has-sub <?= $this->uri->segment(1) == 'modul_pdf' || $this->uri->segment(1) == 'kategori_modul' ? 'active' : '' ?>">
 						<a href="javascript:;" class="menu-link">
 							<div class="menu-icon">
@@ -128,6 +107,29 @@
 							</div>
 						</div>
 					</div>
+					
+					<div class="menu-item has-sub <?= $this->uri->segment(1) == 'kategori_video' || $this->uri->segment(1) == 'video' ? 'active' : '' ?>">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-video"></i>
+							</div>
+							<div class="menu-text">Video Pembelajaran</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item <?= $this->uri->segment(1) == 'video' ? 'active' : '' ?>">
+								<a href="<?= base_url() ?>video" class="menu-link">
+									<div class="menu-text">Data Video</div>
+								</a>
+							</div>
+							<div class="menu-item  <?= $this->uri->segment(1) == 'kategori_video' ? 'active' : '' ?>">
+								<a href="<?= base_url() ?>kategori_video" class="menu-link">
+									<div class="menu-text">Data Kategori Video</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					
 					<div class="menu-item <?= $this->uri->segment(1) == 'pengunjung' ? 'active' : '' ?>">
 						<a href="<?= base_url() ?>pengunjung" class="menu-link ">
 							<div class="menu-icon">

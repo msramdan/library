@@ -15,6 +15,7 @@
 	    <tr><td>Username</td><td><?php echo $username; ?></td></tr>
 	    <tr><td>Nama</td><td><?php echo $nama; ?></td></tr>
 	    <tr><td>Jenis Kelamin</td><td><?php echo $jenis_kelamin; ?></td></tr>
+	    <tr><td>Alamat</td><td><?php echo $alamat; ?></td></tr>
 	    <tr><td>Password</td><td><?php echo $password; ?></td></tr>
 	    <tr><td></td><td><a href="<?php echo site_url('pengunjung') ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>

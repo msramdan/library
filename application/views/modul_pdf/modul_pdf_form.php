@@ -45,7 +45,7 @@
 									<tr>
 										<td>File Pdf <?php echo form_error('file_pdf') ?></td>
 										<td>
-											<a href="#modal-dialog" data-bs-toggle="modal"><img src="<?php echo base_url(); ?>assets/assets/img/siswa/<?= $file_pdf ?>" style="width: 150px;height: 150px;border-radius: 5%;"></img></a>
+											<a href="#modal-dialog" data-bs-toggle="modal"><iframe src="<?php echo base_url(); ?>assets/template/assets/pdf/<?= $file_pdf ?>" style="width: 100%;height: 450px"></iframe></a>
 											<input type="hidden" name="file_pdf_lama" value="<?= $file_pdf ?>">
 											<p style="color: red">Note :Pilih file_pdf Jika Ingin Merubah file_pdf</p>
 											<input type="file" class="form-control" name="file_pdf" id="file_pdf" placeholder="file_pdf" value="" onchange="return validasiEkstensi()" />
@@ -99,7 +99,7 @@
 			if (inputFile.files && inputFile.files[0]) {
 				var reader = new FileReader();
 				reader.onload = function(e) {
-					document.getElementById('preview').innerHTML = '<iframe src="' + e.target.result + '" style="height:650px; width:850px"/>';
+					document.getElementById('preview').innerHTML = '<iframe src="' + e.target.result + '" style="height:450px; width:100%"/>';
 				};
 				reader.readAsDataURL(inputFile.files[0]);
 			}

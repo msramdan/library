@@ -31,9 +31,9 @@
                                             <th>Title</th>
                                             <th>Deskripsi</th>
                                             <th>Tanggal</th>
-                                            <th>Kategori Video Id</th>
+                                            <th>Kategori Video</th>
                                             <th>Link Url</th>
-                                            <th>View</th>
+                                            <th>Total View</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>

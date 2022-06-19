@@ -24,24 +24,70 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/template/assets/css/color.css">
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
 
 </head>
 
 <body>
+    <?php if ($this->session->flashdata('message')) : ?>
+    <?php endif; ?>
+    <div class="flash-data2" data-flashdata2="<?= $this->session->flashdata('error'); ?>"></div>
+    <?php if ($this->session->flashdata('error')) : ?>
+    <?php endif; ?>
+
     <main>
-        <div id="preloader">
-            <div class="preloader-inner">
-                <i class="preloader-icon thm-clr flaticon-kaaba"></i>
-            </div>
-        </div><!-- Page Loader -->
         <header class="stick style1 w-100">
             <div class="topbar bg-color1 d-flex flex-wrap justify-content-center w-100">
                 <ul class="topbar-info-list mb-0 list-unstyled d-inline-flex">
-                    <!-- <li>Selamat Datang,  <span class="thm-clr">Muhammad Saeful Ramdan</span></li>
-                        <li>Logout</li> -->
-                    <li>Login</li>
-                    <li>Register</li>
+
+                    <?php
+                    $user_session = $this->session->userdata('user_web');
+                    if ($user_session) { ?>
+                        <li>Selamat Datang, <span class="thm-clr"><?= $this->session->userdata('nama_user_web')  ?></span></li>
+                        <li> <a href="<?= base_url() ?>web/logout">Logout</a> </li>
+                    <?php } else { ?>
+                        <li><a type="button" class="" data-toggle="modal" data-target="#exampleModal">
+                                Login Aplikasi
+                            </a>
+                        </li>
+                        <li></li>
+                    <?php } ?>
+
+
                 </ul>
+
+                <!-- Modal Login -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Login Aplikasi</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="<?= site_url('web/login') ?>" method="post">
+                                <div class="modal-body">
+
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Username</label>
+                                        <input type="text" class="form-control" name="username" id="username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">Password</label>
+                                        <input type="password" class="form-control" name="password" id="password" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                                    <button type="submit" name="login" class="btn btn-primary">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
 
             </div><!-- Topbar -->
             <div class="logo-menu-wrap d-flex flex-wrap justify-content-between w-100">
@@ -102,13 +148,20 @@
     <script src="<?= base_url() ?>assets/template/assets/js/custom-scripts.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/assets/js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/assets/js/sweetalert.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="<?php echo base_url(); ?>assets/assets/js/dataflash.js"></script>
+
+
     <script>
         $(document).ready(function() {
             $('#example').DataTable({
                 pagingType: 'first_last_numbers',
                 paging: false,
-                
-                
+
+
             });
         });
     </script>

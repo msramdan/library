@@ -30,6 +30,7 @@
                                             <th>Username</th>
                                             <th>Nama</th>
                                             <th>Jenis Kelamin</th>
+                                            <th>Alamat</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -41,7 +42,8 @@
                                                 <td><?php echo $pengunjung->username ?></td>
                                                 <td><?php echo $pengunjung->nama ?></td>
                                                 <td><?php echo $pengunjung->jenis_kelamin ?></td>
-                                                <td style="text-align:center" width="200px">
+                                                <td><?php echo $pengunjung->alamat ?></td>
+                                                <td>
                                                     <?php
                                                     echo anchor(site_url('pengunjung/update/' . encrypt_url($pengunjung->pengunjung_id)), '<i class="fas fa-pencil-alt" aria-hidden="true"></i>', 'class="btn btn-primary btn-sm update_data"');
                                                     echo '  ';
