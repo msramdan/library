@@ -23,10 +23,10 @@ class User_model extends CI_Model
 		return $this->db->get($this->table)->result();
 	}
 
-	function get_all_ex_admin($level_id=null)
+	function get_all_ex_admin($level_id = null)
 	{
 		$this->db->where('level_id !=', 1);
-		if($level_id != null){
+		if ($level_id != null) {
 			$this->db->where('level_id', $level_id);
 		}
 		$this->db->order_by('level_id', $this->order);

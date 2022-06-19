@@ -1,22 +1,23 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_m extends CI_Model {
-    public function login ($post)
+class User_m extends CI_Model
+{
+    public function login($post)
     {
         $this->db->select('*');
         $this->db->from('user');
-        $this->db->where('username',$post['username']);
-        $this->db->where('password',sha1($post['password']));
-        $query=$this->db->get();
+        $this->db->where('username', $post['username']);
+        $this->db->where('password', sha1($post['password']));
+        $query = $this->db->get();
         return $query;
     }
 
-	public function un_lock($post)
+    public function un_lock($post)
     {
         $this->db->select('*');
         $this->db->from('halaman_absensi');
-        $this->db->where('password_lock_screen',sha1($post['password']));
-        $query=$this->db->get();
+        $this->db->where('password_lock_screen', sha1($post['password']));
+        $query = $this->db->get();
         return $query;
     }
 
@@ -25,7 +26,7 @@ class User_m extends CI_Model {
     {
         $this->db->select('*');
         $this->db->from('user');
-        if ($id !=null){
+        if ($id != null) {
             $this->db->where('user_id', $id);
         }
         $query = $this->db->get();
@@ -34,17 +35,19 @@ class User_m extends CI_Model {
 
 
 
-    public function addHistory($user_id, $info, $user_agent) {
-        return $this->db->insert('history_login', array('user_id' => $user_id, 'info' => $info,'user_agent' =>$user_agent));
+    public function addHistory($user_id, $info, $user_agent)
+    {
+        return $this->db->insert('history_login', array('user_id' => $user_id, 'info' => $info, 'user_agent' => $user_agent));
     }
 
-    public function ubah_data($data,$id){
-        $this->db->where('user_id',$id);
-        $this->db->update ('user',$data);
+    public function ubah_data($data, $id)
+    {
+        $this->db->where('user_id', $id);
+        $this->db->update('user', $data);
     }
 
-    public function user_token($user_token){
-        $this->db->insert('user_token',$user_token);
+    public function user_token($user_token)
+    {
+        $this->db->insert('user_token', $user_token);
     }
-
 }

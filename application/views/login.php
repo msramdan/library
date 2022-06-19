@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Permintaan ATK</title>
+	<title>E-Library</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -41,7 +41,7 @@
 				<div class="login-header">
 					<div class="brand">
 						<div class="d-flex align-items-center">
-							<span class="logo"></span>Permintaan ATK
+							<span class="logo"></span>E-Library
 						</div>
 					</div>
 

@@ -6,10 +6,7 @@
 				<div class="stats-icon"><i class="fa fa-cube"></i></div>
 				<div class="stats-info">
 					<h4>DATA BARANG</h4>
-					<?php
-					$total_barang = $this->db->get('barang')->num_rows();
-					?>
-					<p><?= $total_barang ?> Data</p>
+					<p>5 Data</p>
 				</div>
 				<div class="stats-link">
 					<a href="<?= base_url() ?>barang">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
@@ -23,11 +20,7 @@
 				<div class="stats-icon"><i class="fa fa-list"></i></div>
 				<div class="stats-info">
 					<h4>DATA PERMINTAAN</h4>
-					<?php
-					$total_permintaan = $this->db->get('permintaan')->num_rows();
-					$total_waiting = $this->db->get_where('permintaan', array('status' => 'Waiting'))->num_rows();
-					?>
-					<p><?= $total_permintaan ?> Data</p>
+					<p>5 Data</p>
 				</div>
 				<div class="stats-link">
 					<a href="<?= base_url() ?>permintaan">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
@@ -41,10 +34,7 @@
 				<div class="stats-icon"><i class="fa fa-check"></i></div>
 				<div class="stats-info">
 					<h4>PERMINTAAN APPROVED</h4>
-					<?php
-					$total_approved = $this->db->get_where('permintaan', array('status' => 'Approved'))->num_rows();
-					?>
-					<p><?= $total_approved ?> Data</p>
+					<p>5 Data</p>
 				</div>
 				<div class="stats-link">
 					<a href="<?= base_url() ?>permintaan">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
@@ -58,10 +48,7 @@
 				<div class="stats-icon"><i class="fa fa-times"></i></div>
 				<div class="stats-info">
 					<h4>PERMINTAAN REJECT</h4>
-					<?php
-					$total_reject = $this->db->get_where('permintaan', array('status' => 'Reject'))->num_rows();
-					?>
-					<p><?= $total_reject ?> Data</p>
+					<p>5 Data</p>
 				</div>
 				<div class="stats-link">
 					<a href="<?= base_url() ?>permintaan">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
@@ -87,17 +74,7 @@
 								<th>Tanggal</th>
 								<th>Status</th>
 							</tr>
-							<tbody><?php $no = 1;
-									foreach ($permintaan_data as $permintaan) {
-									?>
-									<tr>
-										<td><?= $no++ ?></td>
-										<td><?php echo $permintaan->kode_permintaan ?></td>
-										<td><?php echo $permintaan->nama_karyawan ?></td>
-										<td><?php echo $permintaan->tanggal_permintaan ?></td>
-										<td><?php echo $permintaan->status ?></td>
-									</tr>
-								<?php } ?>
+							<tbody>
 							</tbody>
 						</table>
 					</div>
@@ -126,17 +103,17 @@
 <script>
 	var pieChartData = [{
 			'label': 'Waiting',
-			'value': <?= $total_waiting ?>,
+			'value': 5,
 			'color': 'grey'
 		},
 		{
 			'label': 'Approved',
-			'value': <?= $total_approved ?>,
+			'value': 5,
 			'color': 'green'
 		},
 		{
 			'label': 'Reject',
-			'value': <?= $total_reject ?>,
+			'value': 5,
 			'color': 'red'
 		},
 	];

@@ -8,15 +8,10 @@ class Dashboard extends CI_Controller {
         parent::__construct();
         is_login();
 		check_admin();
-		$this->load->model('Permintaan_model');
     }
 
 	public function index()
 	{
-		$permintaan = $this->Permintaan_model->get_limit();
-		$data = array(
-            'permintaan_data' => $permintaan,
-        );
-		$this->template->load('template','dashboard', $data);
+		$this->template->load('template','dashboard');
 	}
 }
