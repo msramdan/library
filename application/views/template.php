@@ -37,7 +37,7 @@
 	<div id="app" class="app app-header-fixed app-sidebar-fixed">
 		<div id="header" class="app-header">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand"><span class="navbar-logo"></span> E-Library</a>
+				<a href="#" class="navbar-brand"><span class="navbar-logo"></span>E-Library</a>
 				<button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -66,7 +66,7 @@
 						<a href="javascript:;" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
 							<div class="menu-profile-cover with-shadow"></div>
 							<div class="menu-profile-image">
-								<img src="<?= base_url() ?>assets/assets/img/user/admin.png" alt="" /> -->
+								<img src="<?= base_url() ?>assets/assets/img/user/admin.png" alt="" />
 							</div>
 							<div class="menu-profile-info">
 								<div class="d-flex align-items-center">
@@ -86,6 +86,57 @@
 							<div class="menu-text">Dashboard</div>
 						</a>
 					</div>
+					<div class="menu-item has-sub <?= $this->uri->segment(1) == 'kategori_video' || $this->uri->segment(1) == 'video' ? 'active' : '' ?>">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-video"></i>
+							</div>
+							<div class="menu-text">Video Pembelajaran</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item <?= $this->uri->segment(1) == 'video' ? 'active' : '' ?>">
+								<a href="<?= base_url() ?>video" class="menu-link">
+									<div class="menu-text">Data Video</div>
+								</a>
+							</div>
+							<div class="menu-item  <?= $this->uri->segment(1) == 'kategori_video' ? 'active' : '' ?>">
+								<a href="<?= base_url() ?>kategori_video" class="menu-link">
+									<div class="menu-text">Data Kategori Video</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub <?= $this->uri->segment(1) == 'modul_pdf' || $this->uri->segment(1) == 'kategori_modul' ? 'active' : '' ?>">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-book"></i>
+							</div>
+							<div class="menu-text">Modul Pembelajaran</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item <?= $this->uri->segment(1) == 'modul_pdf' ? 'active' : '' ?>">
+								<a href="<?= base_url() ?>modul_pdf" class="menu-link">
+									<div class="menu-text">Data Modul</div>
+								</a>
+							</div>
+							<div class="menu-item  <?= $this->uri->segment(1) == 'kategori_modul' ? 'active' : '' ?>">
+								<a href="<?= base_url() ?>kategori_modul" class="menu-link">
+									<div class="menu-text">Data Kategori Modul</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item <?= $this->uri->segment(1) == 'pengunjung' ? 'active' : '' ?>">
+						<a href="<?= base_url() ?>pengunjung" class="menu-link ">
+							<div class="menu-icon">
+								<i class="fa fa-users"></i>
+							</div>
+							<div class="menu-text">Pengunjung</div>
+						</a>
+					</div>
+					
 					<div class="menu-item has-sub <?= $this->uri->segment(1) == 'user' || $this->uri->segment(1) == 'history_login' || $this->uri->segment(1) == 'backup' ? 'active' : '' ?>">
 						<a href="javascript:;" class="menu-link">
 							<div class="menu-icon">

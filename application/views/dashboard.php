@@ -3,9 +3,9 @@
 
 		<div class="col-xl-3 col-md-6">
 			<div class="widget widget-stats bg-blue">
-				<div class="stats-icon"><i class="fa fa-cube"></i></div>
+				<div class="stats-icon"><i class="fa fa-book"></i></div>
 				<div class="stats-info">
-					<h4>DATA BARANG</h4>
+					<h4>DATA BUKU</h4>
 					<p>5 Data</p>
 				</div>
 				<div class="stats-link">
@@ -19,7 +19,7 @@
 			<div class="widget widget-stats bg-info">
 				<div class="stats-icon"><i class="fa fa-list"></i></div>
 				<div class="stats-info">
-					<h4>DATA PERMINTAAN</h4>
+					<h4>DATA KATEGORI</h4>
 					<p>5 Data</p>
 				</div>
 				<div class="stats-link">
@@ -31,9 +31,9 @@
 
 		<div class="col-xl-3 col-md-6">
 			<div class="widget widget-stats bg-orange">
-				<div class="stats-icon"><i class="fa fa-check"></i></div>
+				<div class="stats-icon"><i class="fa fa-user"></i></div>
 				<div class="stats-info">
-					<h4>PERMINTAAN APPROVED</h4>
+					<h4>DATA PENGUNJUNG</h4>
 					<p>5 Data</p>
 				</div>
 				<div class="stats-link">
@@ -45,9 +45,9 @@
 
 		<div class="col-xl-3 col-md-6">
 			<div class="widget widget-stats bg-red">
-				<div class="stats-icon"><i class="fa fa-times"></i></div>
+				<div class="stats-icon"><i class="fa fa-users"></i></div>
 				<div class="stats-info">
-					<h4>PERMINTAAN REJECT</h4>
+					<h4>DATA USER</h4>
 					<p>5 Data</p>
 				</div>
 				<div class="stats-link">
@@ -62,7 +62,7 @@
 		<div class="col-xl-6 ui-sortable">
 			<div class="panel panel-inverse" data-sortable-id="table-basic-1">
 				<div class="panel-heading ui-sortable-handle">
-					<h4 class="panel-title">5 Permintaan Barang Terbaru</h4>
+					<h4 class="panel-title">5 buku terbanyak di baca</h4>
 				</div>
 				<div class="panel-body">
 					<div class="table-responsive">
@@ -86,10 +86,10 @@
 		<div class="col-xl-6 ui-sortable">
 			<div class="panel panel-inverse" data-sortable-id="table-basic-1">
 				<div class="panel-heading ui-sortable-handle">
-					<h4 class="panel-title">Permintaan ( Waiting VS Approved VS Reject )</h4>
+					<h4 class="panel-title">Grafik 5 buku terbanyak di baca</h4>
 				</div>
 				<div class="panel-body">
-					<div id="nv-pie-chart" class="h-250px"></div>
+					<!-- <div id="nv-pie-chart" class="h-250px"></div> -->
 				</div>
 			</div>
 		</div>
